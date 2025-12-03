@@ -14,21 +14,47 @@ The project combines classical parsing algorithms with transformer-based NLP to 
 
 ### Prerequisites
 
-- [uv](https://github.com/astral-sh/uv)
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer and environment manager
+- Python 3.12 (recommended) or 3.10-3.13
+
+**Why uv?** We use uv for dependency management because:
+- It automatically handles Python version compatibility issues
+- Much faster than pip (10-100x speedup)
+- Better dependency resolution prevents version conflicts
+- Avoids issues with packages like pandas that need specific Python versions
 
 ### Installation
 
 1.  Clone the repository:
     ```bash
     git clone <repository-url>
-    cd <repository-name>
+    cd ManualsGraph
     ```
 
-2.  Create a virtual environment and install dependencies:
+2.  Install uv (if not already installed):
     ```bash
-    uv venv
+    # Windows
+    winget install --id=astral-sh.uv -e
+    
+    # macOS/Linux
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+3.  Create virtual environment with Python 3.12 and install dependencies:
+    ```bash
+    uv venv --python 3.12
+    
+    # Activate the environment:
+    # Windows PowerShell:
+    .venv\Scripts\activate
+    # macOS/Linux:
+    source .venv/bin/activate
+    
+    # Install dependencies:
     uv pip install -r requirements.txt
     ```
+
+**Note:** Python 3.14 is currently not supported due to pandas compatibility issues. Use Python 3.12 for best results.
 
 ## Documentation
 
