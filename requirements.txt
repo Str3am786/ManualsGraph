@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-material 
+pre-commit
+black
+isort
+flake8 
